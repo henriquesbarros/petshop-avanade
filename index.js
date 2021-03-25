@@ -36,14 +36,23 @@ let pets = [
     }
 ]
 
+let i = 0
+
 const vacinarPet = (pet) => {
     if (!pet.vacinado) {
         pet.vacinado = true
         console.log(`${pet.nome} foi vacinado com sucesso!`)
+        i++
     } else {
         console.log(`Ops, ${pet.nome} já está vacinado!`)
     }
 }
 
-vacinarPet(pets[0])
+for (pet of pets) {
+    vacinarPet(pet)
+}
+
+console.log(`${i} pets foram vacinados nessa campanha!`)
+
+
 
