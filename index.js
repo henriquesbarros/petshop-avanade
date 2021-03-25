@@ -9,7 +9,7 @@ let pets = [
         peso: 3,
         tutor: 'Doug',
         contato: '(81) 98774-1992',
-        vacinado: true,
+        vacinado: false,
         servicos: ['banho', 'tosa']
     },
     {
@@ -31,15 +31,19 @@ let pets = [
         peso: 4,
         tutor: 'Henrique',
         contato: '(81) 98774-1992',
-        vacinado: false,
+        vacinado: true,
         servicos: ['banho']
     }
 ]
 
-const listarPets = () => {
-    for (let pet of pets) {
-        console.log(pet.nome)
+const vacinarPet = (pet) => {
+    if (!pet.vacinado) {
+        pet.vacinado = true
+        console.log(`${pet.nome} foi vacinado com sucesso!`)
+    } else {
+        console.log(`Ops, ${pet.nome} já está vacinado!`)
     }
 }
 
-listarPets()
+vacinarPet(pets[0])
+
