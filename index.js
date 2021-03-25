@@ -48,11 +48,18 @@ const vacinarPet = (pet) => {
     }
 }
 
-for (pet of pets) {
-    vacinarPet(pet)
+const campanhaVacina = () => {
+    for (pet of pets) {
+        vacinarPet(pet)
+    }
+    console.log(`${i} pets foram vacinados nessa campanha!`)
 }
 
-console.log(`${i} pets foram vacinados nessa campanha!`)
+campanhaVacina()
+
+
+
+
 
 
 
