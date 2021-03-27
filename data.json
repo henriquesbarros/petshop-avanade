@@ -1,0 +1,48 @@
+{
+  "pets": [
+    {
+      "nome": "Volt",
+      "tipo": "Canis familiaris",
+      "idade": 5,
+      "raca": "Golden retriever",
+      "peso": 30,
+      "tutor": "Henrique",
+      "contato": "(81) 99999-9999",
+      "vacinado": true,
+      "servicos": []
+    },
+    {
+      "nome": "Scooby-Doo",
+      "tipo": "Canis familiaris",
+      "idade": 7,
+      "raca": "Vira-lata",
+      "peso": 54,
+      "tutor": "Salsicha Rogers",
+      "contato": "(81) 99999-9999",
+      "vacinado": true,
+      "servicos": []
+    },
+    {
+      "nome": "Garfield",
+      "tipo": "Felis silvestris catus",
+      "idade": 2,
+      "raca": "Gato Persa",
+      "peso": 5,
+      "tutor": "Jon Arbuckle",
+      "contato": "(81) 99999-9999",
+      "vacinado": false,
+      "servicos": []
+    },
+    {
+      "nome": "Chewbacca",
+      "tipo": "Kaiju",
+      "idade": 190,
+      "raca": "Wookiee",
+      "peso": 112,
+      "tutor": "Han Solo",
+      "contato": "(81) 9999-9999",
+      "vacinado": false,
+      "servicos": []
+    }
+  ]
+}
