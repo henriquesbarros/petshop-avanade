@@ -30,8 +30,13 @@
       "peso": 5,
       "tutor": "Jon Arbuckle",
       "contato": "(81) 99999-9999",
-      "vacinado": false,
-      "servicos": []
+      "vacinado": true,
+      "servicos": [
+        {
+          "servico": "Vacina",
+          "date": "March 29th 2021, 11:48:50 am"
+        }
+      ]
     },
     {
       "nome": "Chewbacca",
@@ -41,8 +46,13 @@
       "peso": 112,
       "tutor": "Han Solo",
       "contato": "(81) 9999-9999",
-      "vacinado": false,
-      "servicos": []
+      "vacinado": true,
+      "servicos": [
+        {
+          "servico": "Vacina",
+          "date": "March 29th 2021, 11:48:50 am"
+        }
+      ]
     }
   ]
 }

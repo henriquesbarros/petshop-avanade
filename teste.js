@@ -1,13 +1,11 @@
 const moment = require('moment');
+
 const fs = require('fs')
-const data = require('./data.json');
-
-let pets = data.pets
-
-
+let bancoDados = fs.readFileSync('./data.json');
+bancoDados = JSON.parse(bancoDados) // SE DER ERRO, MUDAR O NOME DA VARIÁVEL PARA pets, e mudar para todo lugar onde usamos data
 
 const novoCliente = (nome, tipo, idade, raca, peso, tutor, contato, vacinado, servicos) => {
-    pets.push({
+    bancoDados.pets.push({
         nome: nome,
         tipo: tipo,
         idade: idade,
@@ -18,22 +16,14 @@ const novoCliente = (nome, tipo, idade, raca, peso, tutor, contato, vacinado, se
         vacinado: vacinado,
         servicos: servicos
     })
-
-    fs.writeFile('data.json', JSON.stringify(data, null, 2), function (err) {
-        if (err) throw err;
-        console.log('Saved!');
-    })
 }
 
-const atualizarBanco = () => {
-    fs.writeFile('data.json', JSON.stringify(data, null, 2), function (err) {
-        if (err) throw err;
-        console.log('Saved!');
-    })
+const atualizarBanco  = () => {
+    let petsAtualizado = JSON
 }
 
 const listarPets = () => {
-    for (let pet of pets) {
+    for (let pet of bancoDados.pets) {
         const resultVacina = pet.vacinado ? "Vacinado" : "Não vacinado"
 
         console.log(`Nome: ${pet.nome}, Idade: ${pet.idade} anos, Espécie: ${pet.tipo}, Raça: ${pet.raca}, Vacina: ${resultVacina}`)
@@ -72,14 +62,12 @@ const vacinarPet = (pet) => {
 }
 
 const atenderCliente = (pet, servico) => {
-    console.log("Olá, seja bem vindo!")
     servico(pet)
-    console.log("Até mais, obrigado pela preferência!")
 }
 
 const campanhaVacina = () => {
     let petsVacinados = 0
-    for (let pet of pets) {
+    for (let pet of bancoDados.pets) {
         if (!pet.vacinado) {
             vacinarPet(pet)
             petsVacinados++
@@ -95,9 +83,7 @@ listarPets()
 
 campanhaVacina()
 
-atenderCliente(pets[3], vacinarPet)
-
-atualizarBanco()
-
-
-
+atenderCliente(bancoDados.pets[0], darBanhoPet)
+atenderCliente(bancoDados.pets[1], apararUnhasPet)
+atenderCliente(bancoDados.pets[2], vacinarPet)
+atenderCliente(bancoDados.pets[3], tosarPet)
