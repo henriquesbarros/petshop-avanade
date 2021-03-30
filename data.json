@@ -21,6 +21,10 @@
         {
           "nome": "Corte de unhas",
           "data": "March 29th 2021, 4:09:56 pm"
+        },
+        {
+          "nome": "Vacina",
+          "data": "March 30th 2021, 9:26:57 am"
         }
       ]
     },
@@ -41,6 +45,10 @@
         {
           "nome": "Banho",
           "data": "March 29th 2021, 4:10:24 pm"
+        },
+        {
+          "nome": "Vacina",
+          "data": "March 30th 2021, 9:26:57 am"
         }
       ]
     },
@@ -53,7 +61,12 @@
       "tutor": "Jon Arbuckle",
       "contato": "(81) 99999-9999",
       "vacinado": true,
-      "servicos": []
+      "servicos": [
+        {
+          "nome": "Vacina",
+          "data": "March 30th 2021, 9:26:57 am"
+        }
+      ]
     },
     {
       "nome": "Chewbacca",
@@ -72,11 +85,12 @@
         {
           "nome": "Tosa",
           "data": "March 29th 2021, 4:09:12 pm"
+        },
+        {
+          "nome": "Vacina",
+          "data": "March 30th 2021, 9:26:57 am"
         }
       ]
     }
   ]
 }
-
-
-

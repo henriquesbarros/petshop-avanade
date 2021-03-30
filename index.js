@@ -32,26 +32,30 @@ const atualizarBanco = () => {
 
 const darBanhoPet = (pet) => {
     pet.servicos.push({ servico: 'Banho', date: moment().format('MMMM Do YYYY, h:mm:ss a') })
-    console.log(`${pet.nome} está de banho tomado!`)
+    let { nome } = pet
+    console.log(`${nome} está de banho tomado!`)
 }
 
 const tosarPet = (pet) => {
     pet.servicos.push({ servico: 'Tosa', date: moment().format('MMMM Do YYYY, h:mm:ss a') })
-    console.log(`${pet.nome} está com cabelinho na régua!`)
+    let { nome } = pet
+    console.log(`${nome} está com cabelinho na régua!`)
 }
 
 const apararUnhasPet = (pet) => {
     pet.servicos.push({ servico: 'Corte de unhas', date: moment().format('MMMM Do YYYY, h:mm:ss a') })
-    console.log(`${pet.nome} está de unhas aparadas!`)
+    let { nome } = pet
+    console.log(`${nome} está de unhas aparadas!`)
 }
 
 const vacinarPet = (pet) => {
     if (!pet.vacinado) {
         pet.vacinado = true
         pet.servicos.push({ nome: 'Vacina', data: moment().format('MMMM Do YYYY, h:mm:ss a') })
-        console.log(`${pet.nome} foi vacinado com sucesso!`)
+        let { nome } = pet
+        console.log(`${nome} foi vacinado com sucesso!`)
     } else {
-        console.log(`Ops, ${pet.nome} já está vacinado!`)
+        console.log(`Ops, ${nome} já está vacinado!`)
     }
 }
 
@@ -73,6 +77,8 @@ const campanhaVacina = () => {
 
     console.log(`${petsVacinados} pets foram vacinados nessa campanha!`)
     console.log('')
+    atualizarBanco()
+
 }
 
 const buscarPet = (pet) => {
@@ -87,7 +93,6 @@ const filtrarEspeciePet = (especiePet) => {
 
 const clientePremium = (pet) => {
     const contadorServicos = pet.servicos.map(servico => 1)
-    console.log(contadorServicos)
 
     if (contadorServicos != 0) {
         let numeroDeServicos = contadorServicos.reduce((acumulador, valorAtual) => {
@@ -119,10 +124,11 @@ const clientePremium = (pet) => {
 const listarPets = () => {
     pets.forEach(pet => {
         const resultVacina = pet.vacinado ? "Vacinado" : "Não vacinado"
-        console.log(`Nome: ${pet.nome}, Idade: ${pet.idade} anos, Espécie: ${pet.especie}, Raça: ${pet.raca}, Vacina: ${resultVacina}`)
-        for (let servico of pet.servicos) {
-            console.log(`${servico.data} - ${servico.nome}`)
-        }
+        let { nome, idade, especie, raca } = pet
+        console.log(`Nome: ${nome}, Idade: ${idade} anos, Espécie: ${especie}, Raça: ${raca}, Vacina: ${resultVacina}`)
+
+        pet.servicos.forEach(servico => console.log(`${servico.data} - ${servico.nome}`))
+
         console.log('')
     })
 }
